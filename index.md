@@ -1,4 +1,5 @@
 ---
+layout: none
 ---
 
 # 山口県の SARS-CoV-2 感染者
