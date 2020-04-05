@@ -1,17 +1,69 @@
 ---
 ---
 
-table
-    border-collapse: collapse
-    tr
-        &:nth-child(2n)
-            background-color: #F5F5F5
-            
-        th, td
-            text-align: center
-            border: solid 1px #E0E0E0
-            padding: 8px 16px
-        th
-            
-        td
+body
+    background-color: #212121
+    color: #fafafa
+    article
+        max-width: 1080px
+        margin: 0 auto
+
+        #sum
+            span
+                color: #E53935
+                font-size: 3em
+                &.number
+                    font-size: 5em
+                &.date
+                    font-size: 1em
+
+        a
+            color: #2196F3
+            text-decoration: unset
+        #map
+            box-sizing: border-box
+            max-width: 600px
+            svg
+
+        table
+            border-collapse: collapse
+            tr
+                &:nth-child(2n)
+                    background-color: #424242
+                    
+                th, td
+                    text-align: center
+                    border: solid 1px #616161
+                    padding: 8px 16px
+                th
+                td
+        
+        #city_info
+            background-color: #212121cc
+            position: fixed
+            border-radius: 8px
+            color: #fafafa
+            padding: 8px
+
+@media screen and (max-width: 480px)
+    body
+        article
+            h1
+                font-size: 26px
+            h2
+                font-size: 24px
+            h3
+                font-size: 22px
+            h4
+                font-size: 20px
+            h5
+                font-size: 18px
+            h6
+                font-size: 16px
+
+            table
+                tr
+                    th, td
+                        padding: 4px 8px
+
         
