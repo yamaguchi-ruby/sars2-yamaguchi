@@ -14,7 +14,6 @@ title: 山口県の新型コロナウイルス(SARS-CoV-2)感染状況
 <link rel="stylesheet" href="style.css">
 
 ## 備考
-- 「感染源」は感染源である可能性が高いところ。
 - [新型コロナウイルス感染症の山口県内での発生について](https://www.pref.yamaguchi.lg.jp/cms/a15200/kansensyou/koronahassei.html) を参考。
 - 製作: [山口大学プログラミングサークル Ruby / Python 研究会](../)
 
