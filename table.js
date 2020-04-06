@@ -9,7 +9,7 @@ function make_table(){
         let tr = document.createElement("tr")
         table.append(tr)
         let th
-        ths = ["番号", "公表日", "市町村", "年代", "性別", "国籍", "感染経路"]
+        ths = ["番号", "公表日", "市町村", "年代", "性別", "国籍", "感染経路", "備考"]
         for(i in ths){
             th = document.createElement("th")
             tr.append(th)
@@ -31,7 +31,8 @@ function make_table(){
                 info["data"][i]["age"],
                 info["data"][i]["sex"],
                 (info["data"][i]["country"] ? info["data"][i]["country"] : ""),
-                (info["data"][i]["from"] ? info["data"][i]["from"] : "")
+                (info["data"][i]["from"] ? info["data"][i]["from"] : ""),
+                (info["data"][i]["ps"] ? info["data"][i]["ps"] : "")
             ]
             for(j in tds){
                 td = document.createElement("td")
