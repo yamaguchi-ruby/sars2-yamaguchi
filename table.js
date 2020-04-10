@@ -6,15 +6,7 @@ function make_table(){
     req.send()
     req.onload = function(e){
         let info = JSON.parse(req.responseText)
-        let tr = document.createElement("tr")
-        table.append(tr)
-        let th
-        ths = ["番号", "公表日", "市町村", "年代", "性別", "国籍", "感染経路", "備考"]
-        for(i in ths){
-            th = document.createElement("th")
-            tr.append(th)
-            th.innerText = ths[i]
-        }
+        
         let citylist = {}
         for(i in info["data"]){
             let tr = document.createElement("tr")
@@ -40,6 +32,17 @@ function make_table(){
                 td.innerText = tds[j]
             }
         }
+
+        let tr = document.createElement("tr")
+        table.prepend(tr)
+        let th
+        ths = ["番号", "公表日", "市町村", "年代", "性別", "国籍", "感染経路", "備考"]
+        for(i in ths){
+            th = document.createElement("th")
+            tr.append(th)
+            th.innerText = ths[i]
+        }
+
         sum.innerHTML = `<span><ruby>現在<rt>${(new Era(info["header"]["date"])).getWareki()} 時点</rt></ruby> </span><span class="number">${info["data"].length}</span><span> 人</span>`
         map_yamaguchi(citylist)
     }
