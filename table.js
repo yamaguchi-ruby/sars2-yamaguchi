@@ -22,7 +22,7 @@ function make_table(){
                 citylist[info["data"][i]["city"]] = 0
             }
             citylist[info["data"][i]["city"]] += 1
-            table.append(tr)
+            table.prepend(tr)
             let td
             tds = [
                 `${1+parseInt(i)}`,
