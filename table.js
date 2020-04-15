@@ -57,7 +57,9 @@ function map_yamaguchi(citylist){
         for(i in Object.keys(citylist)){
             let city = Object.keys(citylist)[i]
             let n = citylist[city]
-            document.getElementById(city).style.fill = heatmap_red(n)
+            let c = document.getElementById(city)
+            if(c)
+                c.style.fill = heatmap_red(n);
         }
         hover_city(citylist)
     }
