@@ -44,23 +44,31 @@ function make_table(){
         }
 
         sum.innerHTML = `<span><ruby>現在<rt>${(new Era(info["header"]["date"])).getWareki()} 時点</rt></ruby> </span><span class="number">${info["data"].length}</span><span> 人</span>`
-        map_yamaguchi(citylist)
+        map_yamaguchi(citylist, parseInt(p["delay"]))
     }
 }
 
-function map_yamaguchi(citylist){
+function map_yamaguchi(citylist, delay){
+    if(!delay)
+        delay = 0
     let req = new XMLHttpRequest
     req.open("GET", "yamaguchi.svg")
     req.send()
     req.onload = function(e){
         map.innerHTML = req.responseText
-        for(i in Object.keys(citylist)){
-            let city = Object.keys(citylist)[i]
-            let n = citylist[city]
-            let c = document.getElementById(city)
-            if(c)
-                c.style.fill = heatmap_red(n);
-        }
+        let i = 0
+        let a = setInterval(
+            function(){
+                let city = Object.keys(citylist)[i]
+                let n = citylist[city]
+                let c = document.getElementById(city)
+                if(c) c.style.fill = heatmap_red(n);
+                i++
+                if(!(i < Object.keys(citylist).length))
+                    clearInterval(a)
+            },
+            delay
+        )
         hover_city(citylist)
     }
 }
@@ -104,4 +112,22 @@ function hover_city(citylist){
     }
 }
 
+function params(){
+    let obj = {}
+    let params = location
+        .search
+        .substring(1)
+        .split("&")
+        .map(
+            function(e){
+                return e.split("=")
+            }
+        );
+    for(let i in params){
+        obj[params[i][0]] = params[i][1]    
+    }
+    return obj
+}
+
+let p = params()
 make_table()
