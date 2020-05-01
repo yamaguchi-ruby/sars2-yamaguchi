@@ -43,7 +43,7 @@ function make_table(){
             th.innerText = ths[i]
         }
 
-        sum.innerHTML = `<span><ruby>現在<rt>${(new Era(info["header"]["date"])).getWareki()} 時点</rt></ruby> </span><span class="number">${info["data"].length}</span><span> 人</span>`
+        sum.innerHTML = `<span><ruby>現在<rt>${(new Era(info["data"][0]["date"])).getWareki()} 時点</rt></ruby> </span><span class="number">${info["data"].length}</span><span> 人</span>`
         map_yamaguchi(citylist, parseInt(p["delay"]))
     }
 }
