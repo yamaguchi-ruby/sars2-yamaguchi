@@ -2,7 +2,11 @@ function make_table(){
     let table = document.createElement("table")
     list.append(table)
     let req = new XMLHttpRequest
-    req.open("GET", "sars2-yamaguchi-info.json")
+    let uri = "sars2-yamaguchi-info.json"
+    if(typeof(covtablef) != "undefined"){
+        uri = "https://yamaguchi-ruby.github.io/sars2-yamaguchi/" + uri
+    }
+    req.open("GET", uri)
     req.send()
     req.onload = function(e){
         let info = JSON.parse(req.responseText)
@@ -52,7 +56,12 @@ function map_yamaguchi(citylist, delay){
     if(!delay)
         delay = 0
     let req = new XMLHttpRequest
-    req.open("GET", "yamaguchi.svg")
+    
+    let uri = "yamaguchi.svg"
+    if(typeof(covtablef) != "undefined"){
+        uri = "https://yamaguchi-ruby.github.io/sars2-yamaguchi/" + uri
+    }
+    req.open("GET", uri)
     req.send()
     req.onload = function(e){
         map.innerHTML = req.responseText
