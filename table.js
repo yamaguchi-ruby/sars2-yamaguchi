@@ -72,8 +72,8 @@ function map_yamaguchi(citylist, delay){
                 let n = citylist[city]
                 let c = document.getElementById(city)
                 if(c){
-                    c.style.fill = heatmap_red(n)[0]
-                    c.style.stroke = heatmap_red(n)[1]
+                    c.style.fill = heatmap_red(parseInt(Math.log2(n)))[0]
+                    c.style.stroke = heatmap_red(parseInt(Math.log2(n)))[1]
                 }
                 i++
                 if(!(i < Object.keys(citylist).length))
