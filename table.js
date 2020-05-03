@@ -71,7 +71,10 @@ function map_yamaguchi(citylist, delay){
                 let city = Object.keys(citylist)[i]
                 let n = citylist[city]
                 let c = document.getElementById(city)
-                if(c) c.style.fill = heatmap_red(n);
+                if(c){
+                    c.style.fill = heatmap_red(n)[0]
+                    c.style.stroke = heatmap_red(n)[1]
+                }
                 i++
                 if(!(i < Object.keys(citylist).length))
                     clearInterval(a)
@@ -82,20 +85,19 @@ function map_yamaguchi(citylist, delay){
     }
 }
 
-function heatmap_red(n){
-    reds = [
-        "#FFEBEE",
-        "#FFCDD2",
-        "#EF9A9A",
-        "#E57373",
-        "#EF5350",
-        "#F44336",
-        "#E53935",
-        "#D32F2F",
-        "#C62828",
-        "#B71C1C"
-    ]
-    return reds[parseInt(Math.log2(n))]
+function heatmap_red(i){
+    // 赤色を取得
+    ary = ["#ffebee", "#ffcdd2", "#ef9a9a", "#e57373", "#ef5350", "#f44336", "#e53935", "#d32f2f", "#c62828", "#b71c1c"]
+    fill = ""
+    stroke = ""
+    if(i > ary.length - 2){
+        fill = ary[ary.length - 1]
+        stroke = fill
+    }else{
+        fill = ary[i]
+        stroke = ary[i+1]
+    }
+    return [fill, stroke]
 }
 
 function hover_city(citylist){
