@@ -72,8 +72,8 @@ function map_yamaguchi(citylist, delay){
                 let n = citylist[city]
                 let c = document.getElementById(city)
                 if(c){
-                    c.style.fill = heatmap_red(parseInt(Math.log2(n)))[0]
-                    c.style.stroke = heatmap_red(parseInt(Math.log2(n)))[1]
+                    c.style.fill = heatmap_purple(parseInt(Math.log2(n)))[0]
+                    c.style.stroke = heatmap_purple(parseInt(Math.log2(n)))[1]
                 }
                 i++
                 if(!(i < Object.keys(citylist).length))
@@ -85,9 +85,9 @@ function map_yamaguchi(citylist, delay){
     }
 }
 
-function heatmap_red(i){
-    // 赤色を取得
-    ary = ["#ffebee", "#ffcdd2", "#ef9a9a", "#e57373", "#ef5350", "#f44336", "#e53935", "#d32f2f", "#c62828", "#b71c1c"]
+function heatmap_purple(i){
+    // 紫色を取得
+    ary = ["#F3E5F5", "#E1BEE7", "#CE93D8", "#BA68C8", "#AB47BC", "#9C27B0", "#8E24AA", "#7B1FA2", "#6A1B9A", "#4A148C"]
     fill = ""
     stroke = ""
     if(i > ary.length - 2){
