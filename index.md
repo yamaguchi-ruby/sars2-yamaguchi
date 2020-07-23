@@ -11,6 +11,7 @@ title: 山口県の新型コロナウイルス(SARS-CoV-2)感染状況
 
 <script src="https://himeyama.github.io/KeisanJS/era-1.1.0.js"></script>
 <script src="table.js"></script>
+<script src="active.covid19.js"></script>
 <link rel="stylesheet" href="style.css">
 
 ## 参考
