@@ -44,6 +44,7 @@ function make_table(){
             ul.prepend(li)
         }
         document.getElementById("list").appendChild(ul)
+        sum.innerHTML = `<span><ruby>現在<rt>${(new Era(info["data"][info["data"].length - 1]["date"])).getWareki()} 時点</rt></ruby> </span><span class="number">${info["data"].length}</span><span> 人</span>`
         map_yamaguchi(citylist, parseInt(p["delay"]))
     }
 }
