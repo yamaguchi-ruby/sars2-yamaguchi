@@ -33,7 +33,7 @@ function make_table(){
             let li = document.createElement("li");
             li.classList += "kt"
             li.innerHTML = `<table class="ktable">
-                <tr><td colspan="6" style="border: none; empty-cells: hide"></td><th>整理番号</th><td>${tds[0]}</td></tr>
+                <tr><td colspan="6" style="border: none; empty-cells: hide"></td><th>番号</th><td>${tds[0]}</td></tr>
                 <tr><th colspan="2">市町村</th><td colspan="6">${tds[2]}</td></tr>
                 <tr><th colspan="2">公表日</th><td colspan="6">${tds[1]}</td></tr>
                 <tr><th colspan="2">年代</th><td colspan="2">${tds[3]}</td><th colspan="2">性別</th><td colspan="2">${tds[4]}</td></tr>
