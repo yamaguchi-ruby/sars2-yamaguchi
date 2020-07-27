@@ -10,8 +10,9 @@ function make_table(){
     req.send()
     req.onload = function(e){
         let info = JSON.parse(req.responseText)
-        
         let citylist = {}
+        let ul = document.createElement("ul")
+
         for(i in info["data"]){
             let tr = document.createElement("tr")
             if(!citylist[info["data"][i]["city"]]){
@@ -26,28 +27,23 @@ function make_table(){
                 info["data"][i]["city"],
                 info["data"][i]["age"],
                 info["data"][i]["sex"],
-                //(info["data"][i]["country"] ? info["data"][i]["country"] : ""),
                 (info["data"][i]["from"] ? info["data"][i]["from"] : ""),
                 (info["data"][i]["ps"] ? info["data"][i]["ps"] : "")
             ]
-            for(j in tds){
-                td = document.createElement("td")
-                tr.append(td)
-                td.innerText = tds[j]
-            }
+            let li = document.createElement("li");
+            li.classList += "kt"
+            li.innerHTML = `<table class="ktable">
+                <tr><td colspan="6" style="border: none; empty-cells: hide"></td><th>整理番号</th><td>${tds[0]}</td></tr>
+                <tr><th colspan="2">市町村</th><td colspan="6">${tds[2]}</td></tr>
+                <tr><th colspan="2">公表日</th><td colspan="6">${tds[1]}</td></tr>
+                <tr><th colspan="2">年代</th><td colspan="2">${tds[3]}</td><th colspan="2">性別</th><td colspan="2">${tds[4]}</td></tr>
+                <tr><th colspan="2">感染経路</th><td colspan="6">${tds[5]}</td></tr>
+                <tr><th colspan="8">備考</th></tr>
+                <tr><td colspan="8" class="bk">​${tds[6]}</td></tr>
+            </table>`
+            ul.prepend(li)
         }
-
-        let tr = document.createElement("tr")
-        table.prepend(tr)
-        let th
-        ths = ["番号", "公表日", "市町村", "年代", "性別", /*"国籍",*/ "感染経路", "備考"]
-        for(i in ths){
-            th = document.createElement("th")
-            tr.append(th)
-            th.innerText = ths[i]
-        }
-
-        sum.innerHTML = `<span><ruby>現在<rt>${(new Era(info["data"][info["data"].length - 1]["date"])).getWareki()} 時点</rt></ruby> </span><span class="number">${info["data"].length}</span><span> 人</span>`
+        document.getElementById("list").appendChild(ul)
         map_yamaguchi(citylist, parseInt(p["delay"]))
     }
 }

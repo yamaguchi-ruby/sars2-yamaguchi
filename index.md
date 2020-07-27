@@ -13,6 +13,7 @@ title: 山口県の新型コロナウイルス(SARS-CoV-2)感染状況
 <script src="table.js"></script>
 <script src="active.covid19.js"></script>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="table.css">
 
 ## 参考
 - [新型コロナウイルス感染症の山口県内での発生について](https://www.pref.yamaguchi.lg.jp/cms/a10000/korona2020/202004240002.html)
