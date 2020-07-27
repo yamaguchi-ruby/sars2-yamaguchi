@@ -12,6 +12,7 @@ function make_table(){
         let info = JSON.parse(req.responseText)
         let citylist = {}
         let ul = document.createElement("ul")
+        let sex = [0, 0, 0]
 
         for(i in info["data"]){
             let tr = document.createElement("tr")
@@ -41,8 +42,24 @@ function make_table(){
                 <tr><th colspan="8">備考</th></tr>
                 <tr><td colspan="8" class="bk">​${tds[6]}</td></tr>
             </table>`
+            if(tds[4] == "男")
+                sex[0] += 1
+            else if(tds[4] == "女")
+                sex[1] += 1
+            else
+                sex[2] += 1
             ul.prepend(li)
         }
+        
+        // 性別割合
+        let s = document.createElement("div")
+        s.classList += "s_bar"
+        s.innerHTML = `<p class="title">男女比</p>
+        <div class="male" style="width:${sex[0] / (sex[0] + sex[1] + sex[2]) * 100}%;">${sex[0]}</div>
+        <div class="female" style="width:${sex[1] / (sex[0] + sex[1] + sex[2]) * 100}%;">${sex[1]}</div>
+        <div class="ufm" style="width:${sex[2] / (sex[0] + sex[1] + sex[2]) * 100}%;">${sex[2]}</div>`
+        document.getElementById("map").after(s)
+
         document.getElementById("list").appendChild(ul)
         sum.innerHTML = `<span><ruby>現在<rt>${(new Era(info["data"][info["data"].length - 1]["date"])).getWareki()} 時点</rt></ruby> </span><span class="number">${info["data"].length}</span><span> 人</span>`
         map_yamaguchi(citylist, parseInt(p["delay"]))
