@@ -13,6 +13,7 @@ function make_table(){
         let citylist = {}
         let ul = document.createElement("ul")
         let sex = [0, 0, 0]
+        let symp = [0, 0]
 
         for(i in info["data"]){
             let tr = document.createElement("tr")
@@ -48,6 +49,15 @@ function make_table(){
                 sex[1] += 1
             else
                 sex[2] += 1
+            
+            
+            let s = info["data"][i]["symp"]
+            if(s)
+                symp[0] += 1
+            else
+                symp[1] += 1
+
+            
             ul.prepend(li)
         }
         
@@ -55,10 +65,18 @@ function make_table(){
         let s = document.createElement("div")
         s.classList += "s_bar"
         s.innerHTML = `<p class="title">男女比</p>
-        <div class="male" style="width:${sex[0] / (sex[0] + sex[1] + sex[2]) * 100}%;">${sex[0]}</div>
-        <div class="female" style="width:${sex[1] / (sex[0] + sex[1] + sex[2]) * 100}%;">${sex[1]}</div>
+        <div class="male" style="width:${sex[0] / (sex[0] + sex[1] + sex[2]) * 100}%;">男 ${sex[0]} (${sex[0] / (sex[0] + sex[1] + sex[2]) * 100}%)</div>
+        <div class="female" style="width:${sex[1] / (sex[0] + sex[1] + sex[2]) * 100}%;">女 ${sex[1]} (${sex[1] / (sex[0] + sex[1] + sex[2]) * 100}%)</div>
         <div class="ufm" style="width:${sex[2] / (sex[0] + sex[1] + sex[2]) * 100}%;">${sex[2]}</div>`
         document.getElementById("map").after(s)
+
+        // 発症率
+        let s2 = document.createElement("div")
+        s2.classList += "s2_bar"
+        s2.innerHTML = `<p class="title">発症割合</p>
+        <div class="t" style="width:${symp[0] / (symp[0] + symp[1]) * 100}%;">発症 ${symp[0]} (${symp[0] / (symp[0] + symp[1]) * 100}%)</div>
+        <div class="f" style="width:${symp[1] / (symp[0] + symp[1]) * 100}%;">無症状 ${symp[1]} (${symp[1] / (symp[0] + symp[1]) * 100}%)</div>`
+        s.after(s2)
 
         document.getElementById("list").appendChild(ul)
         sum.innerHTML = `<span><ruby>現在<rt>${(new Era(info["data"][info["data"].length - 1]["date"])).getWareki()} 時点</rt></ruby> </span><span class="number">${info["data"].length}</span><span> 人</span>`
