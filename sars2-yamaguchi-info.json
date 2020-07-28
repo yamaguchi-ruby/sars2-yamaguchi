@@ -489,6 +489,17 @@
             "from": "48例目",
             "ps": "",
             "symp": true
+        },
+        {
+            "date": "2020-7-28",
+            "city": "岩国市",
+            "country": "",
+            "age": 20,
+            "sex": "女",
+            "from": "",
+            "ps": "",
+            "symp": true,
+            "保留": true
         }
     ]
 }
