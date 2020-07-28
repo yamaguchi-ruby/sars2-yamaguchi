@@ -65,8 +65,8 @@ function make_table(){
         let s = document.createElement("div")
         s.classList += "s_bar"
         s.innerHTML = `<p class="title">男女比</p>
-        <div class="male" style="width:${sex[0] / (sex[0] + sex[1] + sex[2]) * 100}%;">男 ${sex[0]} (${sex[0] / (sex[0] + sex[1] + sex[2]) * 100}%)</div>
-        <div class="female" style="width:${sex[1] / (sex[0] + sex[1] + sex[2]) * 100}%;">女 ${sex[1]} (${sex[1] / (sex[0] + sex[1] + sex[2]) * 100}%)</div>
+        <div class="male" style="width:${sex[0] / (sex[0] + sex[1] + sex[2]) * 100}%;">男 ${sex[0]} (${parseInt(sex[0] / (sex[0] + sex[1] + sex[2]) * 100)}%)</div>
+        <div class="female" style="width:${sex[1] / (sex[0] + sex[1] + sex[2]) * 100}%;">女 ${sex[1]} (${parseInt(sex[1] / (sex[0] + sex[1] + sex[2]) * 100)}%)</div>
         <div class="ufm" style="width:${sex[2] / (sex[0] + sex[1] + sex[2]) * 100}%;">${sex[2]}</div>`
         document.getElementById("map").after(s)
 
@@ -74,8 +74,8 @@ function make_table(){
         let s2 = document.createElement("div")
         s2.classList += "s2_bar"
         s2.innerHTML = `<p class="title">発症割合</p>
-        <div class="t" style="width:${symp[0] / (symp[0] + symp[1]) * 100}%;">発症 ${symp[0]} (${symp[0] / (symp[0] + symp[1]) * 100}%)</div>
-        <div class="f" style="width:${symp[1] / (symp[0] + symp[1]) * 100}%;">無症状 ${symp[1]} (${symp[1] / (symp[0] + symp[1]) * 100}%)</div>`
+        <div class="t" style="width:${symp[0] / (symp[0] + symp[1]) * 100}%;">発症 ${symp[0]} (${parseInt(symp[0] / (symp[0] + symp[1]) * 100)}%)</div>
+        <div class="f" style="width:${symp[1] / (symp[0] + symp[1]) * 100}%;">無症状 ${symp[1]} (${parseInt(symp[1] / (symp[0] + symp[1]) * 100)}%)</div>`
         s.after(s2)
 
         document.getElementById("list").appendChild(ul)
