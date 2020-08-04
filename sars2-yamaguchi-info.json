@@ -577,7 +577,7 @@
             "age": 30,
             "sex": "男",
             "from": "熊本",
-            "ps": "https://www.pref.yamaguchi.lg.jp/cms/a15200/kansensyou/202008040001.html",
+            "ps": "<a href='https://www.pref.yamaguchi.lg.jp/cms/a15200/kansensyou/202008040001.html'>詳細</a>",
             "symp": true
         }
     ]
