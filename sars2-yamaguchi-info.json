@@ -569,6 +569,16 @@
             "from": "神奈川県",
             "ps": "神奈川県居住。山口へ出張。",
             "symp": true
+        },
+        {
+            "date": "2020-8-4",
+            "city": "下関市",
+            "country": "",
+            "age": 30,
+            "sex": "男",
+            "from": "熊本",
+            "ps": "https://www.pref.yamaguchi.lg.jp/cms/a15200/kansensyou/202008040001.html",
+            "symp": true
         }
     ]
 }
