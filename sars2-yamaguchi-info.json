@@ -579,6 +579,16 @@
             "from": "熊本",
             "ps": "<a href='https://www.pref.yamaguchi.lg.jp/cms/a15200/kansensyou/202008040001.html'>詳細</a>",
             "symp": true
+        },
+        {
+            "date": "2020-8-5",
+            "city": "宇部市",
+            "country": "",
+            "age": 10,
+            "sex": "男",
+            "from": "",
+            "ps": "",
+            "symp": true
         }
     ]
 }
