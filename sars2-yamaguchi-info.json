@@ -689,6 +689,66 @@
             "from": "",
             "ps": "東京都民。転勤のため下関へ移動。経路不明",
             "symp": true
+        },
+        {
+            "date": "2020-8-9",
+            "city": "宇部市",
+            "country": "",
+            "age": 50,
+            "sex": "男",
+            "from": "",
+            "ps": "",
+            "symp": null
+        },
+        {
+            "date": "2020-8-9",
+            "city": "山口市",
+            "country": "",
+            "age": 40,
+            "sex": "男",
+            "from": "",
+            "ps": "",
+            "symp": null
+        },
+        {
+            "date": "2020-8-9",
+            "city": "山陽小野田市",
+            "country": "",
+            "age": 40,
+            "sex": "男",
+            "from": "",
+            "ps": "",
+            "symp": null
+        },
+        {
+            "date": "2020-8-9",
+            "city": "山陽小野田市",
+            "country": "",
+            "age": 40,
+            "sex": "女",
+            "from": "",
+            "ps": "",
+            "symp": null
+        },
+        {
+            "date": "2020-8-9",
+            "city": "防府市",
+            "country": "",
+            "age": 50,
+            "sex": "男",
+            "from": "",
+            "ps": "",
+            "symp": null
+        },
+        {
+            "date": "2020-8-9",
+            "city": null,
+            "country": "",
+            "age": 20,
+            "sex": "女",
+            "from": "",
+            "ps": "大阪府民",
+            "symp": null
         }
     ]
 }
